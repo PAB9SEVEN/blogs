@@ -1,0 +1,16 @@
+{{> header}}
+<div class="ui main text container segment">
+
+<div class="ui huge header">Add Comment to {{blog.title}}</div>
+<form class="ui form" method="POST" action="/blogs/{{blog.id}}/">
+    <div class="field">
+    <label>Text</label>    <input type="text" name="text" placeholder="Text">
+    </div>
+    
+   
+    <input type="Submit" class="ui violet basic button">
+    </form>
+
+
+</div>
+{{> footer}}

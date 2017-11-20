@@ -6,19 +6,23 @@
 {{#each blogs}}
 <div class="item">
     <div class="image">
-<img src="{{image}}">    
-    </div>
-    <div class="content">
+        {{#if image}}
+<img src="{{image}}">
+        {{else}}
+        <img src="/images/blog.jpg">
+        {{/if}}
+    <div class="content" id="title">
         <a class="header" href="/blogs/{{_id}}">{{title}}</a>
-        <div class="meta"><span>{{created}}</span></div>
+    </div>    
     </div>
-     <div class="description">
+   
+     <div class="description" id="desc">
     
     {{body}}
     </div>
 <div class="extra">
     
-    <a class="ui floated basic violet button" href="/blogs/{{_id}}">Read More<i class="right chevrom icon"></i></a>
+    <a class="ui floated basic violet button" id="btn" href="/blogs/{{_id}}">Read More<i class="right chevrom icon"></i></a>
     </div>
  
 </div>

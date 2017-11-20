@@ -14,11 +14,25 @@
         <a href="/blogs/{{blog.id}}/edit" class="ui orange basic button">Edit Post</a>
         <form id="delete" method="POST" action="/blogs/{{blog.id}}?_method=DELETE">
            <BUTTON class="ui red basic button">Delete</BUTTON> 
-            
         </form>
-    
+        <div class="container">
+    <em>Submitted by {{blog.author.username}} </em>
+        </div>
+    <a href="/blogs/{{blog.id}}/comments/new" class="ui green basic button">Add comment</a>
     </div>
-    </div>
     
+    {{#each blog.comments}}
+<div class="ui message">
+  <div class="header">
+  <em><h5>By {{this.author.username}}</h5></em> 
+  </div>
+  <p>
+     <h3> {{this.text}}</h3>
+</p>
 </div>
+{{/each}}
+    </div>
+
+</div>
+
 {{> footer}}
